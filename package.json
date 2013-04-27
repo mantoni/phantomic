@@ -1,6 +1,6 @@
 {
   "name"        : "phantomic",
-  "version"     : "0.1.0",
+  "version"     : "0.2.0",
   "description" : "Pipe stdin to Phantom.JS",
   "author"      : "Maximilian Antoni (http://maxantoni.de)",
   "homepage"    : "https://github.com/mantoni/phantomic",
