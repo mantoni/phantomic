@@ -12,6 +12,10 @@ assert_raises "node . < test/error.js" 1
 
 assert "node . < test/logerror.js" "Whoups!"
 
+assert "node . < test/logerrors.js" "1
+2
+3"
+
 assert "node . < test/error.js" "Error: Ouch!
     at throws #2
     at a #5
