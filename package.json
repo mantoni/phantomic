@@ -1,0 +1,16 @@
+{
+  "name"        : "phantomic",
+  "version"     : "0.1.0",
+  "description" : "Pipe stdin to Phantom.JS",
+  "author"      : "Maximilian Antoni (http://maxantoni.de)",
+  "homepage"    : "https://github.com/mantoni/phantomic",
+  "main"        : "./lib/phantomic.js",
+  "bin"         : "bin/phantomic.bin.js",
+  "engines"     : {
+    "node"      : ">=0.8"
+  },
+  "repository"  : {
+    "type"      : "git",
+    "url"       : "https://github.com/mantoni/phantomic.js.git"
+  }
+}
