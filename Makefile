@@ -1,3 +1,5 @@
+PATH := node_modules/.bin:${PATH}
+
 default: assert.sh
 	@test/suite.sh
 
