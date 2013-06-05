@@ -26,7 +26,6 @@ browserify script.js | phantomic
 ## Run the test cases
 
 ```
-git clone https://github.com/lehmannro/assert.sh
 make
 ```
 

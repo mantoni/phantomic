@@ -1,7 +1,10 @@
-default:
+default: assert.sh
 	@test/suite.sh
 
-version := $(shell node -e "console.log(require('./package.json').version)")
+assert.sh:
+	git clone https://github.com/lehmannro/assert.sh
+
+version := $(shell node -p "require('./package.json').version")
 
 release:
 ifeq (v${version},$(shell git tag -l v${version}))
