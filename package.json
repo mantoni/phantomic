@@ -5,12 +5,12 @@
   "author"          : "Maximilian Antoni (http://maxantoni.de)",
   "homepage"        : "https://github.com/mantoni/phantomic",
   "main"            : "./lib/phantomic.js",
-  "bin"             : "bin/phantomic.bin.js",
+  "bin"             : "bin/cmd.js",
   "engines"         : {
     "node"          : ">=0.8"
   },
   "devDependencies" : {
-    "browserify"    : ">=2.13 <3"
+    "browserify"    : ">=3.21 <4"
   },
   "repository"      : {
     "type"          : "git",
