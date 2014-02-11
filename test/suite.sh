@@ -4,6 +4,12 @@ assert "node bin/cmd.js < test/hello.js" "hello phantom.js"
 
 assert "node bin/cmd.js < test/async.js" "Oh, hi!"
 
+assert "node bin/cmd.js < test/async-long.js" "1
+2
+3
+4
+5"
+
 assert_raises "node bin/cmd.js < test/hello.js"
 
 assert_raises "node bin/cmd.js < test/logerror.js" 1
