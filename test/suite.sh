@@ -29,4 +29,6 @@ assert "node bin/cmd.js < test/error.js" "Error: Ouch!
 
 assert "browserify test/browserify.js | node bin/cmd.js" "hello emitter"
 
+assert "browserify --debug test/sourcemaps.js | node bin/cmd.js" "    at $(pwd)/test/sourcemaps.js:3"
+
 assert_end
