@@ -1,5 +1,13 @@
 # Changes
 
+## 0.4.3
+
+- Fixup uncaught error trace with source maps. Fixes #2
+
+## 0.4.2
+
+- Make scripts without sourcemaps work again
+
 ## 0.4.1
 
 - Use embedded source maps to repair stack traces
