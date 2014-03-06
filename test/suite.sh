@@ -22,13 +22,13 @@ assert "node bin/cmd.js < test/logerrors.js" "1
 2
 3"
 
-assert "node bin/cmd.js < test/error.js" "Error: Ouch!
-    at throws #2
-    at a #5
-    at b #8"
+assert "node bin/cmd.js < test/error.js | head -n 2" "Error: Ouch!
+    at http://localhost:42000/js:2"
 
 assert "browserify test/browserify.js | node bin/cmd.js" "hello emitter"
 
-assert "browserify --debug test/sourcemaps.js | node bin/cmd.js" "    at $(pwd)/test/sourcemaps.js:3"
+assert "browserify --debug test/sourcemaps-console.js | node bin/cmd.js" "    at $(pwd)/test/sourcemaps-console.js:3"
+assert "browserify --debug test/sourcemaps-uncaught | node bin/cmd.js | head -n 2" "Error: oups
+    at $(pwd)/test/sourcemaps-uncaught.js:2"
 
 assert_end
