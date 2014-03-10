@@ -1,5 +1,10 @@
 # Changes
 
+## 0.4.4
+
+- Set source-map dependency to 0.1.32 because the source maps support breaks
+  with 0.1.33. <https://github.com/mozilla/source-map/issues/101>
+
 ## 0.4.3
 
 - Fixup uncaught error trace with source maps. Fixes #2

@@ -1,6 +1,6 @@
 {
   "name"            : "phantomic",
-  "version"         : "0.4.3",
+  "version"         : "0.4.4",
   "description"     : "Pipe stdin to Phantom.JS and console messages to stdout",
   "author"          : "Maximilian Antoni (http://maxantoni.de)",
   "homepage"        : "https://github.com/mantoni/phantomic",
@@ -12,7 +12,7 @@
   "dependencies"    : {
     "through"       : "~2.3.4",
     "convert-source-map": "~0.3.3",
-    "source-map"    : "~0.1.31"
+    "source-map"    : "0.1.32"
   },
   "devDependencies" : {
     "browserify"    : ">=3.21 <4"
