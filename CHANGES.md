@@ -1,5 +1,9 @@
 # Changes
 
+## 0.5.0
+
+- Always load es5-shim (Andrey Popp)
+
 ## 0.4.4
 
 - Set source-map dependency to 0.1.32 because the source maps support breaks
