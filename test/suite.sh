@@ -23,7 +23,7 @@ assert "node bin/cmd.js < test/logerrors.js" "1
 3"
 
 assert "node bin/cmd.js < test/error.js | head -n 2" "Error: Ouch!
-    at http://localhost:42000/js:2"
+    at http://localhost:42000/js/bundle:2"
 
 assert "browserify test/browserify.js | node bin/cmd.js" "hello emitter"
 
