@@ -16,16 +16,17 @@ npm install -g phantomic
 Phantomic does not include PhantomJS itself. Make sure the `phantomjs`
 executable is in your `PATH`.
 
+```
+phantomic [--debug] [--port <num>]
+
+    --debug       Launch the WebKit debugger in a browser
+    --port <num>  Explicit port binding for web server
+```
+
 Pipe any script to phantomic:
 
 ```
-phantomic < ./script.js
-```
-
-With Browserify:
-
-```
-browserify ./script.js | phantomic
+phantomic < ./test.js
 ```
 
 Opening a file:
@@ -53,7 +54,7 @@ working.
 Put a `debugger;` statement somewhere and run:
 
 ```
-cat ./test.js | phantomic --debug
+phantomic --debug < ./test.js
 ```
 
 This will open the WebKit inspector in your browser.
@@ -65,7 +66,7 @@ You can use phantomic from your own node scripts like this:
 ```js
 var phantomic = require('phantomic');
 
-phantomic(process.stdin, function (code) {
+phantomic(process.stdin, { debug : false, port : 0 }, function (code) {
   process.exit(code);
 }).pipe(process.stdout);
 ```
