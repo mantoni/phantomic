@@ -1,5 +1,13 @@
 # Changes
 
+## 0.6.0
+
+- Experimental debugger support (`--debug`)
+- Use random free port by default
+- Allow to specify a port number (`--port`)
+- Run script from a file instead of stdin
+- Improved 'done' detection
+
 ## 0.5.0
 
 - Always load es5-shim (Andrey Popp)
