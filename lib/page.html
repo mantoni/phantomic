@@ -5,6 +5,49 @@
   </head>
   <body>
     <script src="/js/es5-shim"></script>
-    <script src="/js/bundle"></script>
+    <script>
+      (function () {
+
+        console.error = function (msg) {
+          console.log('[E_PHANTOMIC] ' + msg);
+        };
+
+        var injectBundle = function () {
+          var script = document.createElement('script');
+          script.src = '/js/bundle';
+          document.body.appendChild(script);
+
+          (function testDone() {
+            var t1 = Date.now();
+            setTimeout(function () {
+              var t2 = Date.now();
+              if (Math.abs(t2 - t1) < 110) {
+                console.log('[X_PHANTOMIC]');
+              }
+              testDone();
+            }, 100);
+          }());
+        };
+
+        if (location.search === '?debug') {
+          var waitForDebugger = function () {
+            var t = Date.now();
+
+            // Oh, hi! Was waiting for you here. Press play to continue ...
+            debugger;
+
+            if (Date.now() - t > 100) {
+              injectBundle();
+            } else {
+              setTimeout(waitForDebugger, 100);
+            }
+          };
+          waitForDebugger();
+        } else {
+          injectBundle();
+        }
+
+      }());
+    </script>
   </body>
 </html>
