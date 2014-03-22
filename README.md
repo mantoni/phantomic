@@ -19,13 +19,19 @@ executable is in your `PATH`.
 Pipe any script to phantomic:
 
 ```
-phantomic < script.js
+phantomic < ./script.js
 ```
 
 With Browserify:
 
 ```
-browserify script.js | phantomic
+browserify ./script.js | phantomic
+```
+
+Opening a file:
+
+```
+phantomic ./test.js
 ```
 
 If you are using phantomic from a Makefile with a local install, you will have
@@ -36,8 +42,21 @@ BIN = ./node_modules/.bin
 PATH := $(BIN):$(PATH)
 
 test:
-  browserify test.js | phantomic
+  browserify ./test.js | phantomic
 ```
+
+## Debugging
+
+Debugging support is experimental. Please file issues if things are not
+working.
+
+Put a `debugger;` statement somewhere and run:
+
+```
+cat ./test.js | phantomic --debug
+```
+
+This will open the WebKit inspector in your browser.
 
 ## API
 
@@ -54,6 +73,7 @@ phantomic(process.stdin, function (code) {
 ## Run the test cases
 
 ```
+npm install
 make
 ```
 
