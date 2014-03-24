@@ -1,5 +1,9 @@
 # Changes
 
+## 0.6.1
+
+- Exit phantom in debug mode
+
 ## 0.6.0
 
 - Experimental debugger support (`--debug`)
