@@ -1,5 +1,10 @@
 # Changes
 
+## 0.6.2
+
+- Fix issue in conjunction with Sinon.JS by making the "done" checker immune
+  against `setTimeout` overrides
+
 ## 0.6.1
 
 - Exit phantom in debug mode
