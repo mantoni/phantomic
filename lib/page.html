@@ -13,13 +13,14 @@
         };
 
         var injectBundle = function () {
+          var timeout = window.setTimeout;
           var script = document.createElement('script');
           script.src = '/js/bundle';
           document.body.appendChild(script);
 
           (function testDone() {
             var t1 = Date.now();
-            setTimeout(function () {
+            timeout.call(window, function () {
               var t2 = Date.now();
               if (Math.abs(t2 - t1) < 110) {
                 console.log('[X_PHANTOMIC]');
