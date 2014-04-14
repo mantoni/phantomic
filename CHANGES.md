@@ -1,5 +1,9 @@
 # Changes
 
+## 0.7.0
+
+- Add `--brout` support for [brout][] specific stdio/exit handlers
+
 ## 0.6.2
 
 - Fix issue in conjunction with Sinon.JS by making the "done" checker immune
@@ -47,3 +51,4 @@
 
 - Added API
 
+[brout]: https://github.com/mantoni/brout.js
