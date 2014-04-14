@@ -17,10 +17,12 @@ Phantomic does not include PhantomJS itself. Make sure the `phantomjs`
 executable is in your `PATH`.
 
 ```
-phantomic [--debug] [--port <num>]
+phantomic [--debug] [--port <num>] [--brout]
 
     --debug       Launch the WebKit debugger in a browser
     --port <num>  Explicit port binding for web server
+    --brout       Assume brout is part of the JS
+
 ```
 
 Pipe any script to phantomic:
@@ -59,6 +61,16 @@ phantomic --debug < ./test.js
 
 This will open the WebKit inspector in your browser.
 
+## Exit detection
+
+By default, phantomic will report an error if anything was logged to
+`console.error`. Program termination is detected by observing delays in the
+event queue and the last log statement that was received.
+
+To make exit detection more reliable, [brout][] can be used. If brout is part
+of the given script, run phantomic with `--brout` to install handlers for the
+`out`, `err` and `exit` events.
+
 ## API
 
 You can use phantomic from your own node scripts like this:
@@ -81,3 +93,5 @@ make
 ## License
 
 MIT
+
+[brout]: https://github.com/mantoni/brout.js

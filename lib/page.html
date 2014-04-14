@@ -8,29 +8,51 @@
     <script>
       (function () {
 
-        console.error = function (msg) {
-          console.log('[E_PHANTOMIC] ' + msg);
+        var flags = location.search.substring(1).split('&');
+
+        var broutHandler = function () {
+          var brout = process._brout;
+          var log = console.log.original;
+          brout.on('out', function (msg) {
+            log.call(console, '[OUT]' + msg);
+          });
+          brout.on('err', function (msg) {
+            log.call(console, '[ERR]' + msg);
+          });
+          brout.on('exit', function (code) {
+            log.call(console, '[EXIT ' + (code || 0) + ']');
+          });
         };
 
-        var injectBundle = function () {
-          var timeout = window.setTimeout;
-          var script = document.createElement('script');
-          script.src = '/js/bundle';
-          document.body.appendChild(script);
-
+        var timeout = window.setTimeout;
+        var defaultHandler = function () {
+          console.error = function (msg) {
+            console.log('[ERR]' + msg + '\n');
+          };
           (function testDone() {
             var t1 = Date.now();
             timeout.call(window, function () {
               var t2 = Date.now();
               if (Math.abs(t2 - t1) < 110) {
-                console.log('[X_PHANTOMIC]');
+                console.log('[TEST_EXIT]');
               }
               testDone();
             }, 100);
           }());
         };
 
-        if (location.search === '?debug') {
+        var injectBundle = function () {
+          var script = document.createElement('script');
+          script.src = '/js/bundle';
+          if (flags.indexOf('brout') !== -1) {
+            script.addEventListener('load', broutHandler);
+          } else {
+            defaultHandler();
+          }
+          document.body.appendChild(script);
+        };
+
+        if (flags.indexOf('debug') !== -1) {
           var waitForDebugger = function () {
             var t = Date.now();
 

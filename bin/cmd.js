@@ -4,17 +4,25 @@
 var phantomic = require('../lib/phantomic.js');
 
 var args = process.argv.slice(2);
-var debug = false;
-var port = 0;
+var arg;
+var opts = {
+  debug : false,
+  brout : false,
+  port  : 0
+};
 var input = process.stdin;
 
 while (args.length && args[0][0] === '-') {
-  if (args[0] === '--debug') {
+  arg = args[0];
+  if (arg === '--debug') {
     args.shift();
-    debug = true;
-  } else if (args[0] === '--port') {
+    opts.debug = true;
+  } else if (arg === '--port') {
     args.shift();
-    port = parseInt(args.shift(), 10);
+    opts.port = parseInt(args.shift(), 10);
+  } else if (arg === '--brout') {
+    args.shift();
+    opts.brout = true;
   } else {
     console.error('Unsupported options: ' + args[0]);
     process.exit(1);
@@ -25,6 +33,6 @@ if (args.length) {
   input = require('fs').createReadStream(args[0]);
 }
 
-phantomic(input, { debug : debug, port : port }, function (code) {
+phantomic(input, opts, function (code) {
   process.exit(code);
 }).pipe(process.stdout);
