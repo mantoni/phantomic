@@ -1,5 +1,9 @@
 # Changes
 
+## 0.7.1
+
+- Wait for phantomjs output streams to end
+
 ## 0.7.0
 
 - Add `--brout` support for [brout][] specific stdio/exit handlers
