@@ -1,5 +1,9 @@
 # Changes
 
+## 0.7.2
+
+- Improve error handling if Phantom.JS cannot be found
+
 ## 0.7.1
 
 - Wait for phantomjs output streams to end
