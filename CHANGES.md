@@ -1,5 +1,9 @@
 # Changes
 
+## 0.7.3
+
+- Bump es5-shim
+
 ## 0.7.2
 
 - Improve error handling if Phantom.JS cannot be found
