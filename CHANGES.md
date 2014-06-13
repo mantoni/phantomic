@@ -1,5 +1,9 @@
 # Changes
 
+## 0.7.4
+
+- Launch http server and phantomjs while waiting for input stream
+
 ## 0.7.3
 
 - Bump es5-shim
