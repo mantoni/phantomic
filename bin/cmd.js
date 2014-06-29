@@ -20,6 +20,8 @@ while (args.length && args[0][0] === '-') {
     opts.port = parseInt(args.shift(), 10);
   } else if (arg === '--brout') {
     opts.brout = true;
+  } else if (arg === '--phantomjs') {
+    opts.phantomjs = args.shift();
   } else {
     console.error('Unsupported options: ' + arg);
     process.exit(1);

@@ -33,7 +33,9 @@ assert "browserify --debug test/sourcemaps-console.js | node bin/cmd.js" "    at
 assert "browserify --debug test/sourcemaps-uncaught | node bin/cmd.js | head -n 2" "Error: oups
     at $(pwd)/test/sourcemaps-uncaught.js:2"
 
+PHANTOM=`which phantomjs`
 NODE=`which node`
-assert "PATH=; $NODE bin/cmd.js < test/hello.js" "Cannot find phantomjs. Make sure it's in your \$PATH."
+assert "PATH=; $NODE bin/cmd.js < test/hello.js" "Cannot find phantomjs. Make sure it's in your \$PATH, or specify with --phantomjs."
+assert "PATH=; $NODE bin/cmd.js --phantomjs $PHANTOM < test/hello.js" "hello phantom.js"
 
 assert_end
