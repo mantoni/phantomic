@@ -13,18 +13,15 @@ var opts = {
 var input = process.stdin;
 
 while (args.length && args[0][0] === '-') {
-  arg = args[0];
+  arg = args.shift();
   if (arg === '--debug') {
-    args.shift();
     opts.debug = true;
   } else if (arg === '--port') {
-    args.shift();
     opts.port = parseInt(args.shift(), 10);
   } else if (arg === '--brout') {
-    args.shift();
     opts.brout = true;
   } else {
-    console.error('Unsupported options: ' + args[0]);
+    console.error('Unsupported options: ' + arg);
     process.exit(1);
   }
 }
