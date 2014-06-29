@@ -14,15 +14,17 @@ npm install -g phantomic
 ## Usage
 
 Phantomic does not include PhantomJS itself. Make sure the `phantomjs`
-executable is in your `PATH`.
+executable is in your `PATH` or specify with `--phantomjs`.
 
 ```
-phantomic [--debug] [--port <num>] [--brout]
+Usage: phantomic [options] [file]
 
-    --debug       Launch the WebKit debugger in a browser
-    --port <num>  Explicit port binding for web server
-    --brout       Assume brout is part of the JS
-
+Options:
+    --debug             Launch the WebKit debugger in a browser
+    --port <num>        Explicit port binding for temporary web server. If no
+                        port is specified, a random free port is used.
+    --phantomjs <path>  Use specified phantomjs binary
+    --brout             Assume brout is part of the JS
 ```
 
 Pipe any script to phantomic:
@@ -50,9 +52,6 @@ test:
 
 ## Debugging
 
-Debugging support is experimental. Please file issues if things are not
-working.
-
 Put a `debugger;` statement somewhere and run:
 
 ```
@@ -69,7 +68,7 @@ event queue and the last log statement that was received.
 
 To make exit detection more reliable, [brout][] can be used. If brout is part
 of the given script, run phantomic with `--brout` to install handlers for the
-`out`, `err` and `exit` events.
+`out`, `err` and `exit` events. Also make sure `process.exit(code)` is called.
 
 ## API
 
@@ -78,7 +77,11 @@ You can use phantomic from your own node scripts like this:
 ```js
 var phantomic = require('phantomic');
 
-phantomic(process.stdin, { debug : false, port : 0 }, function (code) {
+phantomic(process.stdin, {
+  debug : false,
+  port  : 0,
+  brout : false
+}, function (code) {
   process.exit(code);
 }).pipe(process.stdout);
 ```
