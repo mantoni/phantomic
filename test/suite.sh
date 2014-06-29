@@ -10,6 +10,8 @@ assert "node bin/cmd.js < test/async-long.js" "1
 4
 5"
 
+assert_raises "echo '' | node bin/cmd.js --brout" 1
+
 assert_raises "node bin/cmd.js < test/hello.js"
 
 assert_raises "node bin/cmd.js < test/logerror.js" 1

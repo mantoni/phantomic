@@ -11,6 +11,9 @@
         var flags = location.search.substring(1).split('&');
 
         var broutHandler = function () {
+          if (typeof process === 'undefined') {
+            return console.log('[EXIT 1]');
+          }
           var brout = process._brout;
           var log = console.log.original;
           brout.on('out', function (msg) {
