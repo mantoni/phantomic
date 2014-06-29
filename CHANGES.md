@@ -1,5 +1,9 @@
 # Changes
 
+## 0.7.5
+
+- Fix stale phantomjs instance when piping an empty script with --brout
+
 ## 0.7.4
 
 - Launch http server and phantomjs while waiting for input stream
