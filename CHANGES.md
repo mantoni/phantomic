@@ -1,5 +1,9 @@
 # Changes
 
+## 0.8.0
+
+- Support for non-global install of phantomjs
+
 ## 0.7.5
 
 - Fix stale phantomjs instance when piping an empty script with --brout
