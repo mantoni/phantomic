@@ -1,5 +1,10 @@
 # Changes
 
+## 0.8.1
+
+- Remove console statement when running a file
+- Improve docs for command line and API usage
+
 ## 0.8.0
 
 - Support for non-global install of phantomjs
