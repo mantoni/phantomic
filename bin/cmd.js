@@ -28,7 +28,6 @@ while (args.length && args[0][0] === '-') {
   }
 }
 if (args.length) {
-  console.log(args[0]);
   input = require('fs').createReadStream(args[0]);
 }
 
