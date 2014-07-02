@@ -1,5 +1,9 @@
 # Changes
 
+## 0.8.2
+
+- Fix urls in error traces if flags where passed
+
 ## 0.8.1
 
 - Remove console statement when running a file
