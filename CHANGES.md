@@ -1,5 +1,9 @@
 # Changes
 
+## 0.9.0
+
+- Moved source mapping logic into new source-mapper module
+
 ## 0.8.2
 
 - Fix urls in error traces if flags where passed
