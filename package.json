@@ -14,8 +14,7 @@
   },
   "dependencies": {
     "through": "^2.3.4",
-    "convert-source-map": "~0.3.3",
-    "source-map": "~0.1.33",
+    "source-mapper": "~0.1.0",
     "es5-shim": "^3.4.0"
   },
   "devDependencies": {
