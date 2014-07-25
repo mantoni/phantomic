@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "through": "^2.3.4",
-    "source-mapper": "~0.1.0",
+    "source-mapper": "~0.2.0",
     "es5-shim": "^3.4.0"
   },
   "devDependencies": {
