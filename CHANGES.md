@@ -1,5 +1,9 @@
 # Changes
 
+## 0.10.0
+
+- Bump source-mapper
+
 ## 0.9.0
 
 - Moved source mapping logic into new source-mapper module
