@@ -1,5 +1,9 @@
 # Changes
 
+## 0.10.1
+
+- Close http server
+
 ## 0.10.0
 
 - Bump source-mapper
