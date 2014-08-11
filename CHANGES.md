@@ -1,5 +1,9 @@
 # Changes
 
+## 0.10.2
+
+- Tiny performance improvement
+
 ## 0.10.1
 
 - Close http server
