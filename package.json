@@ -23,5 +23,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mantoni/phantomic.js.git"
-  }
+  },
+  "license": "MIT"
 }
