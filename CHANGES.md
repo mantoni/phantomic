@@ -1,5 +1,9 @@
 # Changes
 
+## 1.0.0
+
+- Bump source-mapper and es5-shim
+
 ## 0.10.2
 
 - Tiny performance improvement
