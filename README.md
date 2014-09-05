@@ -1,5 +1,8 @@
 # Phantomic
 
+[![SemVer]](http://semver.org)
+[![License]](https://github.com/mantoni/phantomic/blob/master/LICENSE)
+
 - Pipes stdin to [PhantomJS](http://phantomjs.org)
 - Writes script console output to stdout
 - Writes script errors to stderr
@@ -93,8 +96,15 @@ npm install
 make
 ```
 
+## Compatibility
+
+- Node 0.10 or later
+- PhantomJS 1.9
+
 ## License
 
 MIT
 
+[SemVer]: http://img.shields.io/:semver-%E2%9C%93-brightgreen.svg
+[License]: http://img.shields.io/npm/l/phantomic.svg
 [brout]: https://github.com/mantoni/brout.js
