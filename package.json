@@ -13,9 +13,9 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "through": "^2.3.4",
-    "source-mapper": "~0.2.0",
-    "es5-shim": "^3.4.0"
+    "through": "^2.3",
+    "source-mapper": "^1.0",
+    "es5-shim": "^4.0"
   },
   "devDependencies": {
     "browserify": "^3.21"
