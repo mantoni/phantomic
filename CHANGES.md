@@ -1,5 +1,10 @@
 # Changes
 
+## 1.0.1
+
+- Disable timeouts on the http server. Fixes an issue with leaking PhantomJS
+  processes.
+
 ## 1.0.0
 
 - Bump source-mapper and es5-shim
