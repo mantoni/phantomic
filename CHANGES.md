@@ -1,5 +1,9 @@
 # Changes
 
+## 1.0.2
+
+- Work around [issue with PhantomJS 1.9.8](https://github.com/ariya/phantomjs/issues/12697)
+
 ## 1.0.1
 
 - Disable timeouts on the http server. Fixes an issue with leaking PhantomJS
