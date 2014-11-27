@@ -16,7 +16,7 @@
     "through": "^2.3",
     "source-mapper": "^1.0",
     "es5-shim": "^4.0",
-    "cross-spawn": ">=0.2.3"
+    "cross-spawn": "^0.2"
   },
   "devDependencies": {
     "browserify": "^3.21"
