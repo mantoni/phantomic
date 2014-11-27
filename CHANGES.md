@@ -1,5 +1,9 @@
 # Changes
 
+## 1.0.3
+
+- Fix spawning on windows (Deema Yvanow)
+
 ## 1.0.2
 
 - Work around [issue with PhantomJS 1.9.8](https://github.com/ariya/phantomjs/issues/12697)
