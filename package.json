@@ -4,7 +4,8 @@
   "description": "Pipe stdin to Phantom.JS and console messages to stdout",
   "author": "Maximilian Antoni <mail@maxantoni.de> (http://maxantoni.de)",
   "contributors": [
-    "Andrey Popp <8mayday@gmail.com>"
+    "Andrey Popp <8mayday@gmail.com>",
+    "Deema Yvanow <df.creative@gmail.com>"
   ],
   "homepage": "https://github.com/mantoni/phantomic",
   "main": "./lib/phantomic.js",
