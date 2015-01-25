@@ -23,11 +23,13 @@ executable is in your `PATH` or specify with `--phantomjs`.
 Usage: phantomic [options] [file]
 
 Options:
-    --debug             Launch the WebKit debugger in a browser
-    --port <num>        Explicit port binding for temporary web server. If no
-                        port is specified, a random free port is used.
-    --phantomjs <path>  Use specified phantomjs binary
-    --brout             Assume brout is part of the JS
+    --debug                Launch the WebKit debugger in a browser
+    --port <num>           Explicit port binding for temporary web server. If
+                           no port is specified, a random free port is used.
+    --phantomjs <path>     Use specified phantomjs binary
+    --web-security <bool>  Enables PhantomJS web security and forbids
+                           cross-domain XHR (default is true)
+    --brout                Assume brout is part of the JS
 ```
 
 Pipe any script to phantomic:
@@ -83,7 +85,8 @@ var phantomic = require('phantomic');
 phantomic(process.stdin, {
   debug : false,
   port  : 0,
-  brout : false
+  brout : false,
+  'web-security': false
 }, function (code) {
   process.exit(code);
 }).pipe(process.stdout);

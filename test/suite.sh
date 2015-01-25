@@ -41,4 +41,8 @@ assert "PATH=; $NODE bin/cmd.js < test/hello.js" "Cannot find phantomjs. Make su
 # Don't know why this fails. Running this command from the command line works as expected
 #assert "PATH=; $NODE bin/cmd.js --phantomjs $PHANTOM < test/hello.js" "hello phantom.js"
 
+assert_raises "node bin/cmd.js < test/web-security.js" 1
+
+assert "node bin/cmd.js --web-security false < test/web-security.js" "--web-security=false"
+
 assert_end
