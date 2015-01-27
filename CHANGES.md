@@ -1,5 +1,9 @@
 # Changes
 
+## 1.1.0
+
+- Add `--web-security` option to toggle PhantomJS web security (Jacob Waller)
+
 ## 1.0.3
 
 - Fix spawning on windows (Deema Yvanow)
