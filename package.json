@@ -5,7 +5,8 @@
   "author": "Maximilian Antoni <mail@maxantoni.de> (http://maxantoni.de)",
   "contributors": [
     "Andrey Popp <8mayday@gmail.com>",
-    "Deema Yvanow <df.creative@gmail.com>"
+    "Deema Yvanow <df.creative@gmail.com>",
+    "Jacob Waller <jacob@krawaller.se>"
   ],
   "homepage": "https://github.com/mantoni/phantomic",
   "main": "./lib/phantomic.js",
