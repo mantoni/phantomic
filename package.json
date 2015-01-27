@@ -20,7 +20,7 @@
     "cross-spawn": "^0.2"
   },
   "devDependencies": {
-    "browserify": "^3.21"
+    "browserify": "^8.1"
   },
   "repository": {
     "type": "git",
