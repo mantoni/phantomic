@@ -31,9 +31,9 @@ assert "node bin/cmd.js --port 42000 < test/error.js | head -n 2" "Error: Ouch!
 
 assert "browserify test/browserify.js | node bin/cmd.js" "hello emitter"
 
-assert "browserify --debug test/sourcemaps-console.js | node bin/cmd.js" "    at $(pwd)/test/sourcemaps-console.js:3"
-assert "browserify --debug test/sourcemaps-uncaught | node bin/cmd.js | head -n 2" "Error: oups
-    at $(pwd)/test/sourcemaps-uncaught.js:2"
+assert "browserify --debug test/sourcemaps-console.js | node bin/cmd.js" "      at test/sourcemaps-console.js:3"
+assert "browserify --debug test/sourcemaps-uncaught.js | node bin/cmd.js | head -n 2" "Error: oups
+      at test/sourcemaps-uncaught.js:2"
 
 PHANTOM=`which phantomjs`
 NODE=`which node`
