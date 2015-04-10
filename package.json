@@ -6,7 +6,8 @@
   "contributors": [
     "Andrey Popp <8mayday@gmail.com>",
     "Deema Yvanow <df.creative@gmail.com>",
-    "Jacob Waller <jacob@krawaller.se>"
+    "Jacob Waller <jacob@krawaller.se>",
+    "Arnout Kazemier <info@3rd-Eden.com>"
   ],
   "homepage": "https://github.com/mantoni/phantomic",
   "main": "./lib/phantomic.js",
