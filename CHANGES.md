@@ -1,5 +1,10 @@
 # Changes
 
+## 1.1.1
+
+- Prevent the page from navigating after the initial page is loaded (Arnout
+  Kazemier)
+
 ## 1.1.0
 
 - Add `--web-security` option to toggle PhantomJS web security (Jacob Waller)
