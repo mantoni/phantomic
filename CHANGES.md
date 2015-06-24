@@ -1,5 +1,9 @@
 # Changes
 
+## 1.1.2
+
+- Remove dependency on `through` by using PathThrough streams
+
 ## 1.1.1
 
 - Prevent the page from navigating after the initial page is loaded (Arnout
