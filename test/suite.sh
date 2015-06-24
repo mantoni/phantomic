@@ -1,3 +1,5 @@
+#!/bin/bash
+
 . assert.sh/assert.sh
 
 assert "node bin/cmd.js < test/hello.js" "hello phantom.js"
@@ -29,10 +31,10 @@ assert "node bin/cmd.js < test/logerrors.js" "1
 assert "node bin/cmd.js --port 42000 < test/error.js | head -n 2" "Error: Ouch!
     at http://localhost:42000/js/bundle:2"
 
-assert "browserify test/browserify.js | node bin/cmd.js" "hello emitter"
+assert "node_modules/.bin/browserify test/browserify.js | bin/cmd.js" "hello emitter"
 
-assert "browserify --debug test/sourcemaps-console.js | node bin/cmd.js" "      at test/sourcemaps-console.js:3"
-assert "browserify --debug test/sourcemaps-uncaught.js | node bin/cmd.js | head -n 2" "Error: oups
+assert "node_modules/.bin/browserify --debug test/sourcemaps-console.js | node bin/cmd.js" "      at test/sourcemaps-console.js:3"
+assert "node_modules/.bin/browserify --debug test/sourcemaps-uncaught.js | node bin/cmd.js | head -n 2" "Error: oups
       at test/sourcemaps-uncaught.js:2"
 
 PHANTOM=`which phantomjs`

@@ -1,5 +1,3 @@
-PATH := node_modules/.bin:${PATH}
-
 version := $(shell node -p "require('./package.json').version")
 
 default: assert.sh
