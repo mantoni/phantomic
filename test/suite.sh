@@ -47,6 +47,10 @@ assert_raises "node bin/cmd.js < test/web-security.js" 1
 
 assert "node bin/cmd.js --web-security false < test/web-security.js" "--web-security=false"
 
+assert_raises "node bin/cmd.js < test/ignore-ssl-errors.js" 1
+
+assert "node bin/cmd.js --web-security false --ignore-ssl-errors true < test/ignore-ssl-errors.js" "--ignore-ssl-errors=true"
+
 assert "node bin/cmd.js < test/navigation.js" "no navigation"
 
 assert_end
