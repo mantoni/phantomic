@@ -24,6 +24,8 @@ while (args.length && args[0][0] === '-') {
     opts.phantomjs = args.shift();
   } else if (arg === '--web-security') {
     opts['web-security'] = args.shift() === 'true';
+  } else if (arg === '--ignore-ssl-errors') {
+    opts['ignore-ssl-errors'] = args.shift() === 'true';
   } else {
     console.error('Unsupported options: ' + arg);
     process.exit(1);

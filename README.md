@@ -30,6 +30,9 @@ Options:
     --web-security <bool>  Enables PhantomJS web security and forbids
                            cross-domain XHR (default is true)
     --brout                Assume brout is part of the JS
+    --ignore-ssl-errors <bool>  Tell PhantomJS web security and forbids
+                                cross-domain XHR (default is false)
+
 ```
 
 Pipe any script to phantomic:
@@ -86,7 +89,8 @@ phantomic(process.stdin, {
   debug : false,
   port  : 0,
   brout : false,
-  'web-security': false
+  'web-security': false,
+  'ignore-ssl-errors': true
 }, function (code) {
   process.exit(code);
 }).pipe(process.stdout);
