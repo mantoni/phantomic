@@ -1,5 +1,9 @@
 # Changes
 
+## 1.2.0
+
+- Add `--ignore-ssl-errors` option (Adrian Chang)
+
 ## 1.1.2
 
 - Remove dependency on `through` by using PathThrough streams
