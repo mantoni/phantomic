@@ -30,8 +30,8 @@ Options:
     --web-security <bool>  Enables PhantomJS web security and forbids
                            cross-domain XHR (default is true)
     --brout                Assume brout is part of the JS
-    --ignore-ssl-errors <bool>  Tell PhantomJS web security and forbids
-                                cross-domain XHR (default is false)
+    --ignore-ssl-errors <bool>  Tell PhantomJS to ignore SSL certificate errors
+                                when network requests are made (default is false)
 
 ```
 
