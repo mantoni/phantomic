@@ -8,7 +8,8 @@
     "Deema Yvanow <df.creative@gmail.com>",
     "Jacob Waller <jacob@krawaller.se>",
     "Arnout Kazemier <info@3rd-Eden.com>",
-    "Adrian Chang <achang@godaddy.com>"
+    "Adrian Chang <achang@godaddy.com>",
+    "Fabio El Manchi <fabioelmanchi@gmail.com>"
   ],
   "homepage": "https://github.com/mantoni/phantomic",
   "main": "./lib/phantomic.js",
