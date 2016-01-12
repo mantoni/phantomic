@@ -53,4 +53,9 @@ assert "node bin/cmd.js --web-security false --ignore-ssl-errors true < test/ign
 
 assert "node bin/cmd.js < test/navigation.js" "no navigation"
 
+export TZ='Europe/Berlin'
+assert "node bin/cmd.js < test/timezone.js" "-60"
+export TZ='America/New_York'
+assert "node bin/cmd.js < test/timezone.js" "300"
+
 assert_end
