@@ -1,5 +1,10 @@
 # Changes
 
+## 1.3.0
+
+- Set phantomjs timezone to environment `TZ` (Fabio El Manchi)
+- Wait a little longer for log messages
+
 ## 1.2.0
 
 - Add `--ignore-ssl-errors` option (Adrian Chang)
