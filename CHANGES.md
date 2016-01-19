@@ -1,5 +1,11 @@
 # Changes
 
+## 1.4.0
+
+- Bump `source-mapper` to `^2.0.0`
+- Bump `cross-spawn` to `^2.1.4`
+- Test against `browserify@13`
+
 ## 1.3.0
 
 - Set phantomjs timezone to environment `TZ` (Fabio El Manchi)
