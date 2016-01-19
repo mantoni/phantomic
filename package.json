@@ -18,9 +18,9 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "source-mapper": "^1.0",
-    "es5-shim": "^4.0",
-    "cross-spawn": "^0.4"
+    "source-mapper": "^2.0.0",
+    "es5-shim": "^4.4.1",
+    "cross-spawn": "^2.1.4"
   },
   "devDependencies": {
     "browserify": "^13.0.0"
