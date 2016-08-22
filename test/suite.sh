@@ -54,8 +54,16 @@ assert "node bin/cmd.js --web-security false --ignore-ssl-errors true < test/ign
 assert "node bin/cmd.js < test/navigation.js" "no navigation"
 
 export TZ='Europe/Berlin'
-assert "node bin/cmd.js < test/timezone.js" "-60"
+DST=`date +%Z`
+if [[ $DST == CEST ]]; then
+  OFFSET_EU="-120"
+  OFFSET_US="240"
+else
+  OFFSET_EU="-60"
+  OFFSET_US="300"
+fi
+assert "node bin/cmd.js < test/timezone.js" $OFFSET_EU
 export TZ='America/New_York'
-assert "node bin/cmd.js < test/timezone.js" "300"
+assert "node bin/cmd.js < test/timezone.js" $OFFSET_US
 
 assert_end
