@@ -106,7 +106,7 @@ make
 ## Compatibility
 
 - Node 0.10 or later
-- PhantomJS 1.9
+- PhantomJS 1.9 / 2.0
 
 ## License
 
