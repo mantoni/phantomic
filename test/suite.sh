@@ -53,6 +53,8 @@ assert "node bin/cmd.js --web-security false --ignore-ssl-errors true < test/ign
 
 assert "node bin/cmd.js < test/navigation.js" "no navigation"
 
+assert "node bin/cmd.js --viewport-width 888 --viewport-height 999 < test/viewport.js" "888 999"
+
 export TZ='Europe/Berlin'
 DST=`date +%Z`
 if [[ $DST == CEST ]]; then
