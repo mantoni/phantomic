@@ -9,7 +9,8 @@
     "Jacob Waller <jacob@krawaller.se>",
     "Arnout Kazemier <info@3rd-Eden.com>",
     "Adrian Chang <achang@godaddy.com>",
-    "Fabio El Manchi <fabioelmanchi@gmail.com>"
+    "Fabio El Manchi <fabioelmanchi@gmail.com>",
+    "Frederik Ring <frederik.ring@gmail.com>"
   ],
   "homepage": "https://github.com/mantoni/phantomic",
   "main": "./lib/phantomic.js",
