@@ -32,6 +32,9 @@ Options:
     --brout                Assume brout is part of the JS
     --ignore-ssl-errors <bool>  Tell PhantomJS to ignore SSL certificate errors
                                 when network requests are made (default is false)
+    --viewport-width <num>      Tell PhantomJS about the desired viewport width
+    --viewport-height <num>     Tell PhantomJS about the desired viewport
+                                height
 
 ```
 
