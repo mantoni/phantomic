@@ -18,12 +18,17 @@
   "engines": {
     "node": ">=0.10"
   },
+  "scripts": {
+    "version": "changes",
+    "postversion": "git push --follow-tags && npm publish"
+  },
   "dependencies": {
     "source-mapper": "^2.0.0",
     "es5-shim": "^4.4.1",
     "cross-spawn": "^2.1.4"
   },
   "devDependencies": {
+    "@studio/changes": "^1.1.0",
     "browserify": "^13.0.0"
   },
   "repository": {
