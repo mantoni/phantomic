@@ -93,7 +93,9 @@ phantomic(process.stdin, {
   port  : 0,
   brout : false,
   'web-security': false,
-  'ignore-ssl-errors': true
+  'ignore-ssl-errors': true,
+  'viewport-width': 1024,
+  'viewport-height': 768
 }, function (code) {
   process.exit(code);
 }).pipe(process.stdout);
