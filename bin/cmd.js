@@ -19,9 +19,9 @@ while (args.length && args[0][0] === '-') {
   } else if (arg === '--port') {
     opts.port = parseInt(args.shift(), 10);
   } else if (arg === '--viewport-width') {
-    opts.viewportWidth = parseInt(args.shift(), 10);
+    opts['viewport-width'] = parseInt(args.shift(), 10);
   } else if (arg === '--viewport-height') {
-    opts.viewportHeight = parseInt(args.shift(), 10);
+    opts['viewport-height'] = parseInt(args.shift(), 10);
   } else if (arg === '--brout') {
     opts.brout = true;
   } else if (arg === '--phantomjs') {
