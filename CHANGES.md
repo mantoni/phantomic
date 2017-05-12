@@ -1,5 +1,9 @@
 # Changes
 
+## 1.5.1
+
+- Normalizes casing of options (#17) (Frederik Ring)
+
 ## 1.5.0
 
 - Add option to pass viewport height and width to phantomjs (#16) (Frederik Ring)
