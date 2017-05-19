@@ -68,4 +68,11 @@ assert "node bin/cmd.js < test/timezone.js" $OFFSET_EU
 export TZ='America/New_York'
 assert "node bin/cmd.js < test/timezone.js" $OFFSET_US
 
+# Verify SyntaxError is caught and logged
+assert "echo 'const modern = () => {}' | node bin/cmd.js --port 42000" "SyntaxError: Unexpected token ')'
+    at http://localhost:42000/js/bundle:1"
+# Verify ReferenceError is not logged twice
+assert "echo 'unknown()' | node bin/cmd.js --port 42000" "ReferenceError: Can't find variable: unknown
+    at http://localhost:42000/js/bundle:1"
+
 assert_end

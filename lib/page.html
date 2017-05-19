@@ -44,6 +44,15 @@
           }());
         };
 
+        window.onerror = function (err, file, line) {
+          // SyntaxError is somehow different from other errors and can only be
+          // caught here.
+          var str = String(err);
+          if (str.indexOf('SyntaxError:') === 0) {
+            console.log('[ERR]' + str + '\n    at ' + file + ':' + line + '\n');
+          }
+        };
+
         var injectBundle = function () {
           var script = document.createElement('script');
           script.src = '/js/bundle';
