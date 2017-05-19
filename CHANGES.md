@@ -1,5 +1,9 @@
 # Changes
 
+## 1.5.2
+
+- Catch `SyntaxError` exceptions
+
 ## 1.5.1
 
 - Normalizes casing of options (#17) (Frederik Ring)

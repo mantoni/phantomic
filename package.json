@@ -1,6 +1,6 @@
 {
   "name": "phantomic",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Pipe stdin to Phantom.JS and console messages to stdout",
   "author": "Maximilian Antoni <mail@maxantoni.de> (http://maxantoni.de)",
   "contributors": [
