@@ -10,7 +10,8 @@
     "Arnout Kazemier <info@3rd-Eden.com>",
     "Adrian Chang <achang@godaddy.com>",
     "Fabio El Manchi <fabioelmanchi@gmail.com>",
-    "Frederik Ring <frederik.ring@gmail.com>"
+    "Frederik Ring <frederik.ring@gmail.com>",
+    "Phred <fearphage@gmail.com>"
   ],
   "homepage": "https://github.com/mantoni/phantomic",
   "main": "./lib/phantomic.js",
