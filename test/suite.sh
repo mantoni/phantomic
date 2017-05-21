@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 . assert.sh/assert.sh
 
@@ -13,6 +13,7 @@ assert "node bin/cmd.js < test/async-long.js" "1
 3
 4
 5"
+assert_end basic
 
 assert_raises "echo '' | node bin/cmd.js --brout" 1
 
@@ -28,6 +29,8 @@ assert "node bin/cmd.js < test/logerrors.js" "1
 2
 3"
 
+assert_end error
+
 assert "node bin/cmd.js --port 42000 < test/error.js | head -n 2" "Error: Ouch!
     at http://localhost:42000/js/bundle:2"
 
@@ -37,11 +40,13 @@ assert "node_modules/.bin/browserify --debug test/sourcemaps-console.js | node b
 assert "node_modules/.bin/browserify --debug test/sourcemaps-uncaught.js | node bin/cmd.js | head -n 2" "Error: oups
       at test/sourcemaps-uncaught.js:2"
 
-PHANTOM=`which phantomjs`
-NODE=`which node`
+assert_end debugging
+
+PHANTOM=$(which phantomjs)
+NODE=$(which node)
 assert "PATH=; $NODE bin/cmd.js < test/hello.js" "Cannot find phantomjs. Make sure it's in your \$PATH, or specify with --phantomjs."
 # Don't know why this fails. Running this command from the command line works as expected
-#assert "PATH=; $NODE bin/cmd.js --phantomjs $PHANTOM < test/hello.js" "hello phantom.js"
+assert "env PATH=$(dirname "$NODE") $NODE bin/cmd.js --phantomjs $PHANTOM < test/hello.js" "hello phantom.js"
 
 assert_raises "node bin/cmd.js < test/web-security.js" 1
 
@@ -51,12 +56,14 @@ assert_raises "node bin/cmd.js < test/ignore-ssl-errors.js" 1
 
 assert "node bin/cmd.js --web-security false --ignore-ssl-errors true < test/ignore-ssl-errors.js" "--ignore-ssl-errors=true"
 
-assert "node bin/cmd.js < test/navigation.js" "no navigation"
-
 assert "node bin/cmd.js --viewport-width 888 --viewport-height 999 < test/viewport.js" "888 999"
 
+assert_end "cli flag"
+
+assert "node bin/cmd.js < test/navigation.js" "no navigation"
+
 export TZ='Europe/Berlin'
-DST=`date +%Z`
+DST=$(date +%Z)
 if [[ $DST == CEST ]]; then
   OFFSET_EU="-120"
   OFFSET_US="240"
@@ -68,6 +75,8 @@ assert "node bin/cmd.js < test/timezone.js" $OFFSET_EU
 export TZ='America/New_York'
 assert "node bin/cmd.js < test/timezone.js" $OFFSET_US
 
+assert_end miscellaneous
+
 # Verify SyntaxError is caught and logged
 assert "echo 'const modern = () => {}' | node bin/cmd.js --port 42000" "SyntaxError: Unexpected token ')'
     at http://localhost:42000/js/bundle:1"
@@ -75,4 +84,4 @@ assert "echo 'const modern = () => {}' | node bin/cmd.js --port 42000" "SyntaxEr
 assert "echo 'unknown()' | node bin/cmd.js --port 42000" "ReferenceError: Can't find variable: unknown
     at http://localhost:42000/js/bundle:1"
 
-assert_end
+assert_end "JS error"
