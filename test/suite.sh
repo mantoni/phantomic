@@ -56,11 +56,14 @@ assert_raises "node bin/cmd.js < test/ignore-ssl-errors.js" 1
 
 assert "node bin/cmd.js --web-security false --ignore-ssl-errors true < test/ignore-ssl-errors.js" "--ignore-ssl-errors=true"
 
+assert "node bin/cmd.js --viewport-width 888 --viewport-height 999 < test/viewport.js" "888 999"
+
 assert_end "cli flag"
 
 assert "node bin/cmd.js < test/navigation.js" "no navigation"
 
 utc=$(date +%s --utc -d "12:00:00")
+
 export TZ='Europe/Berlin'
 offset=$((($(date +%s --utc -d "12:00:00 $(date +%Z)") - $utc) / 60))
 assert "node bin/cmd.js < test/timezone.js" $offset
@@ -69,3 +72,12 @@ offset=$((($(date +%s --utc -d "12:00:00 $(date +%Z)") - $utc) / 60))
 assert "node bin/cmd.js < test/timezone.js" $offset
 
 assert_end miscellaneous
+
+# Verify SyntaxError is caught and logged
+assert "echo 'const modern = () => {}' | node bin/cmd.js --port 42000" "SyntaxError: Unexpected token ')'
+    at http://localhost:42000/js/bundle:1"
+# Verify ReferenceError is not logged twice
+assert "echo 'unknown()' | node bin/cmd.js --port 42000" "ReferenceError: Can't find variable: unknown
+    at http://localhost:42000/js/bundle:1"
+
+assert_end "error checks"

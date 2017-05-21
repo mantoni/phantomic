@@ -1,5 +1,23 @@
 # Changes
 
+## 1.5.2
+
+- Catch `SyntaxError` exceptions
+
+## 1.5.1
+
+- Normalizes casing of options (#17) (Frederik Ring)
+
+## 1.5.0
+
+- Add option to pass viewport height and width to phantomjs (#16) (Frederik Ring)
+- Add PhantomJS 2.0 to compatibility section
+- Fix timezone tests to also work with DST
+- Fix URL to git repo (Ivan Goncharov)
+- Use [@studio/changes][] to automate the release process
+
+[@studio/changes]: https://github.com/javascript-studio/studio-changes
+
 ## 1.4.0
 
 - Bump `source-mapper` to `^2.0.0`

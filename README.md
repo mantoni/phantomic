@@ -32,6 +32,9 @@ Options:
     --brout                Assume brout is part of the JS
     --ignore-ssl-errors <bool>  Tell PhantomJS to ignore SSL certificate errors
                                 when network requests are made (default is false)
+    --viewport-width <num>      Tell PhantomJS about the desired viewport width
+    --viewport-height <num>     Tell PhantomJS about the desired viewport
+                                height
 
 ```
 
@@ -90,7 +93,9 @@ phantomic(process.stdin, {
   port  : 0,
   brout : false,
   'web-security': false,
-  'ignore-ssl-errors': true
+  'ignore-ssl-errors': true,
+  'viewport-width': 1024,
+  'viewport-height': 768
 }, function (code) {
   process.exit(code);
 }).pipe(process.stdout);
