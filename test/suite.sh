@@ -62,14 +62,18 @@ assert_end "cli flag"
 
 assert "node bin/cmd.js < test/navigation.js" "no navigation"
 
-utc=$(date +%s --utc -d "12:00:00")
-
 export TZ='Europe/Berlin'
-offset=$((($(date +%s --utc -d "12:00:00 $(date +%Z)") - $utc) / 60))
-assert "node bin/cmd.js < test/timezone.js" $offset
+DST=$(date +%Z)
+if [[ $DST == CEST ]]; then
+  OFFSET_EU="-120"
+  OFFSET_US="240"
+else
+  OFFSET_EU="-60"
+  OFFSET_US="300"
+fi
+assert "node bin/cmd.js < test/timezone.js" $OFFSET_EU
 export TZ='America/New_York'
-offset=$((($(date +%s --utc -d "12:00:00 $(date +%Z)") - $utc) / 60))
-assert "node bin/cmd.js < test/timezone.js" $offset
+assert "node bin/cmd.js < test/timezone.js" $OFFSET_US
 
 assert_end miscellaneous
 
@@ -80,4 +84,4 @@ assert "echo 'const modern = () => {}' | node bin/cmd.js --port 42000" "SyntaxEr
 assert "echo 'unknown()' | node bin/cmd.js --port 42000" "ReferenceError: Can't find variable: unknown
     at http://localhost:42000/js/bundle:1"
 
-assert_end "error checks"
+assert_end "JS error"
